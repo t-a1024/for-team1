@@ -106,10 +106,14 @@
     "module": "commonjs",
     "target": "ES2020",
     "outDir": "out",
-    "lib": ["ES2020"],
+    "lib": ["ES2020", "DOM"],        // ← ここに DOM を追加（重要）
     "sourceMap": true,
     "rootDir": "src",
-    "strict": true
+    "strict": true,
+    "esModuleInterop": true,        // default import を使うなら true 推奨
+    "skipLibCheck": true,           // ライブラリの型チェックをスキップしてビルドを安定化（任意だが有用）
+    "types": ["node"]
   },
   "exclude": ["node_modules", ".vscode-test"]
 }
+
